@@ -5,7 +5,7 @@ mongoose.connect(connection_String,{
     useNewUrlParser:true ,
         useUnifiedTopology:true
 })
-.then(()=>{console.log("is up");})
+.then(()=>{console.log("is uppp");})
 .catch((err)=>{console.log(err);})
 
 module.exports = mongoose.connection;

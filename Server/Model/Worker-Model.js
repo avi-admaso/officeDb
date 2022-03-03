@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Worker = new mongoose.Schema(
   {
+    Id : Number,
     FirstName: String,
 
     LastName: {
@@ -13,8 +14,14 @@ const Worker = new mongoose.Schema(
 
     Age: Number,
   },
-  { timestamps:true }
+  // { timestamps:true }
 );
 
 
 module.exports = mongoose.model('worker' , Worker)
+// {
+//   "FirstName": "avi",
+// "LastName": "admaso",
+// "Email": "String@gmail.com",
+// "Age": 27
+// }

@@ -1,14 +1,15 @@
-const officeRouter =  require("express").Router() ;
-const workerControllers = require('../Controller/workers-controller');
+const officeRouter = require("express").Router();
+const workerControllers = require("../Controller/workers-controller");
 
-officeRouter.get("/" , workerControllers.getAll)
+officeRouter.get("/", workerControllers.getAll);
 
-officeRouter.get("/:id" , workerControllers.getById)
+officeRouter.get("/:id", workerControllers.getById);
 
-officeRouter.post("/" , workerControllers.addWorker)
+officeRouter.post("/", workerControllers.addWorker);
 
-officeRouter.put("/:id" , workerControllers.updateWorker)
+officeRouter.put("/:id", workerControllers.updateWorker);
 
-officeRouter.delete("/:id" , workerControllers.deleteWorker)
+officeRouter.delete("/:id", workerControllers.deleteWorker);
+
 
 module.exports = officeRouter;

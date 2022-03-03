@@ -15,7 +15,7 @@ const getById = async (req , res) => {
 const addWorker = async (req , res) => {
      await Workers.create(req.body)
     .then(data => res.send(data))
-    .catch(err => res.status(400).send({message:err}))
+    .catch(err => res.status(400).send({message: "cannot put that nigga"}))
 }
 
 const updateWorker = async (req , res) => {

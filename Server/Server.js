@@ -1,13 +1,21 @@
 require("dotenv").config();
 const express = require("express");
-require('./DB/Office-DB');
+require("./DB/Office-DB");
 const cors = require("cors");
-const officeRouter = require('./Route/Worker-Routes')
-const app = express() ;
-app.use(express.json())
+const officeRouter = require("./Route/Worker-Routes");
+const userRouter = require("./Route/user-Route");
+// const passport = require("passport");
+// const passport = require("./config/passport");
+const app = express();
+app.use(express.json());
 app.use(cors());
-const port = process.env.PORT ;
+app.use(express.json({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+// const passport = require("./config/passport")(passport);
+// app.use(passport.initialize());
+// app.use("./workerapp", authanticte("jwt", { session: false }), officeRouter);
+app.use("/usersPass", userRouter);
+app.use("/workers", officeRouter);
+const port = process.env.PORT;
 app.listen(port);
-
-app.use("/workers" , officeRouter);
-
